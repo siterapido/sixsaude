@@ -2,15 +2,15 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, HelpCircle, MessageCircle, Sparkles } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { MagneticButton } from '@/components/animations'
+import { MagneticButton, GradientText } from '@/components/animations'
 
 /**
  * FAQ Section
- * Accordion with frequently asked questions
+ * Accordion with frequently asked questions - Premium Gold Design
  */
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -51,17 +51,50 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="relative py-24 md:py-32 lg:py-48 glass-section-dark glass-overlay noise-overlay shine-diagonal vignette-gold">
       <Container>
-        {/* Header */}
-        <div className="mb-16 md:mb-24">
-          <SectionHeader
-            title="Perguntas"
-            highlight="Frequentes"
-            subtitle="Encontre respostas rápidas para as dúvidas mais comuns"
+        {/* Premium Header */}
+        <div className="mb-16 md:mb-24 text-center space-y-6">
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <HelpCircle className="w-4 h-4 text-gold-primary" />
+            <span className="text-gold-primary text-sm font-medium">Tire suas dúvidas</span>
+          </motion.div>
+
+          <motion.h2
+            className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Perguntas <GradientText className="font-bold">Frequentes</GradientText>
+          </motion.h2>
+
+          <motion.p
+            className="text-platinum text-lg max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Encontre respostas rápidas para as dúvidas mais comuns
+          </motion.p>
+
+          <motion.div
+            className="h-1 bg-gradient-to-r from-gold-primary to-gold-signature rounded-full mx-auto"
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: 100, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
           />
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        {/* FAQ Accordion - Premium Style */}
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -69,38 +102,54 @@ export const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true, margin: '-50px' }}
+              className="group"
             >
               <motion.button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`w-full bg-black-deep border rounded-card p-6 text-left transition-all duration-300 ${
+                className={`w-full bg-black-deep/80 backdrop-blur-sm rounded-2xl p-6 text-left transition-all duration-500 ${
                   openIndex === index
-                    ? 'border-l-[3px] border-l-gold-primary border-t-gray-border border-r-gray-border border-b-transparent bg-gradient-to-r from-gold-primary/4 to-transparent'
-                    : 'border-gray-border hover:border-gold-primary/25'
+                    ? 'border-2 border-gold-primary/60 shadow-[0_0_30px_rgba(245,166,35,0.2)]'
+                    : 'border border-gold-primary/20 hover:border-gold-primary/40 shadow-[0_0_20px_rgba(245,166,35,0.05)] hover:shadow-[0_0_25px_rgba(245,166,35,0.1)]'
                 }`}
-                whileHover={{ scale: 1.005 }}
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.995 }}
               >
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className={`font-semibold text-lg pr-4 transition-colors duration-300 ${
-                    openIndex === index ? 'text-gold-signature' : 'text-white'
+                <div className="flex items-center gap-4">
+                  {/* Number indicator */}
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm transition-all duration-300 ${
+                    openIndex === index
+                      ? 'bg-gradient-to-br from-gold-primary to-gold-signature text-black-premium shadow-[0_4px_15px_rgba(245,166,35,0.4)]'
+                      : 'bg-gold-primary/10 text-gold-primary border border-gold-primary/30'
+                  }`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+
+                  <h3 className={`flex-1 font-semibold text-lg md:text-xl pr-4 transition-colors duration-300 ${
+                    openIndex === index ? 'text-gold-primary' : 'text-white group-hover:text-gold-light'
                   }`}>
                     {faq.question}
                   </h3>
+
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
+                    className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      openIndex === index
+                        ? 'bg-gold-primary/20 border border-gold-primary/40'
+                        : 'bg-gold-primary/5 border border-gold-primary/20'
+                    }`}
                   >
                     <ChevronDown
-                      size={24}
-                      className={`flex-shrink-0 text-gold-primary ${
-                        openIndex === index ? 'icon-glow-sm' : ''
+                      size={20}
+                      className={`text-gold-primary transition-all duration-300 ${
+                        openIndex === index ? 'drop-shadow-[0_0_8px_rgba(245,166,35,0.6)]' : ''
                       }`}
                     />
                   </motion.div>
                 </div>
               </motion.button>
 
-              {/* Answer */}
+              {/* Answer - Premium Style */}
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -109,8 +158,11 @@ export const FAQSection = () => {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="bg-black-deep/50 border-x border-b border-gray-border border-l-[3px] border-l-gold-primary/45 rounded-b-card p-6">
-                      <p className="text-platinum leading-relaxed">{faq.answer}</p>
+                    <div className="mx-4 bg-gradient-to-br from-gold-primary/5 via-black-deep/90 to-gold-signature/5 border-x-2 border-b-2 border-gold-primary/30 rounded-b-2xl p-6 shadow-[inset_0_4px_20px_rgba(245,166,35,0.05)]">
+                      <div className="flex gap-4">
+                        <div className="flex-shrink-0 w-1 bg-gradient-to-b from-gold-primary to-gold-signature rounded-full" />
+                        <p className="text-platinum/90 leading-relaxed text-base">{faq.answer}</p>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -119,7 +171,7 @@ export const FAQSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - Premium */}
         <motion.div
           className="text-center mt-16 md:mt-24"
           initial={{ opacity: 0 }}
@@ -127,10 +179,18 @@ export const FAQSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-platinum mb-6">Não encontrou sua resposta?</p>
-          <MagneticButton strength={0.3}>
-            <Button variant="primary">Fale com um especialista</Button>
-          </MagneticButton>
+          <div className="inline-flex flex-col items-center gap-6 p-8 bg-gradient-to-br from-gold-primary/10 via-black-deep/50 to-gold-signature/10 border border-gold-primary/30 rounded-3xl shadow-[0_0_40px_rgba(245,166,35,0.1)]">
+            <div className="flex items-center gap-3">
+              <Sparkles className="w-5 h-5 text-gold-primary" />
+              <p className="text-white font-medium text-lg">Não encontrou sua resposta?</p>
+            </div>
+            <MagneticButton strength={0.3}>
+              <Button variant="primary" className="shadow-[0_4px_20px_rgba(245,166,35,0.3)]">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Fale com um especialista
+              </Button>
+            </MagneticButton>
+          </div>
         </motion.div>
       </Container>
     </section>
