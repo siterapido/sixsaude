@@ -38,14 +38,14 @@ export function SectionHeader({
       ref={ref}
       className={`space-y-4 ${centered ? 'text-center' : ''} ${className}`}
     >
-      <h2 className={`font-display font-semibold text-h2 ${textColor}`}>
+      <h2 className={`font-display font-bold text-3xl md:text-4xl lg:text-5xl ${textColor}`}>
         <SplitText type="words" stagger={0.04}>
           {title}
         </SplitText>
         {highlight && (
           <>
             {' '}
-            <GradientText className="font-display font-semibold">
+            <GradientText className="font-display font-bold">
               {highlight}
             </GradientText>
           </>

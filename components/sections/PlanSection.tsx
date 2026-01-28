@@ -83,10 +83,10 @@ export const PlanSection = () => {
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl text-gold-primary mb-2">
+                      <h3 className="font-display font-bold text-xl md:text-2xl text-gold-primary mb-2">
                         {plan.title}
                       </h3>
-                      <p className="text-gold-dark text-sm mb-6 leading-relaxed">
+                      <p className="text-gold-dark text-sm md:text-base mb-6 leading-relaxed">
                         {plan.description}
                       </p>
 

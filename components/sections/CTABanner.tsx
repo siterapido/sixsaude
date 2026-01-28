@@ -106,7 +106,7 @@ export const CTABanner: React.FC<CTABannerProps> = ({
           {/* Text Content */}
           <div className="relative z-10">
             <h3 className={cn(
-              'font-display font-semibold text-2xl md:text-3xl mb-2',
+              'font-display font-bold text-2xl md:text-3xl mb-2',
               textStyles[variant]
             )}>
               <SplitText type="words" stagger={0.04}>

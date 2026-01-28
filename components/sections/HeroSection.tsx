@@ -80,13 +80,13 @@ export const HeroSection = () => {
 
           {/* Giant Headline */}
           <motion.div variants={itemVariants} className="mb-8 md:mb-10">
-            <h1 className="font-display font-bold text-black-premium leading-[0.95] tracking-tight">
-              <span className="block text-[clamp(2.5rem,8vw,7rem)]">
+            <h1 className="font-display font-bold text-black-premium leading-[0.95] tracking-tight uppercase">
+              <span className="block text-[clamp(2.5rem,8vw,6rem)]">
                 <SplitText type="words" stagger={0.05} delay={0.2}>
                   Sua saúde
                 </SplitText>
               </span>
-              <span className="block text-[clamp(2.5rem,8vw,7rem)] text-black-premium/40">
+              <span className="block text-[clamp(2.5rem,8vw,6rem)] text-black-premium/40">
                 <SplitText type="words" stagger={0.05} delay={0.4}>
                   em boas mãos
                 </SplitText>

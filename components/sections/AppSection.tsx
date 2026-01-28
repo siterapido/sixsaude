@@ -67,10 +67,10 @@ export const AppSection = () => {
             viewport={{ once: true, margin: '-100px' }}
           >
             <div>
-              <h2 className="font-display font-semibold text-h2 mb-4">
+              <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
                 Tudo na palma da sua mão
               </h2>
-              <p className="text-xl text-platinum-light">
+              <p className="text-lg md:text-xl text-platinum-light">
                 Gerencie seu plano, consulte a rede credenciada e muito mais pelo aplicativo SIX Saúde
               </p>
             </div>

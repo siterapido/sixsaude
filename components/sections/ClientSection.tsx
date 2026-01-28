@@ -72,7 +72,7 @@ export const ClientSection = () => {
           </motion.p>
 
           <motion.h2
-            className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white max-w-5xl mx-auto leading-tight"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white max-w-4xl mx-auto leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -80,7 +80,7 @@ export const ClientSection = () => {
           >
             Resolva tudo por aqui de forma{' '}
             <span className="text-gold-primary">rápida</span> e{' '}
-            <span className="text-gold-primary">prática</span>, quando e onde você estiver
+            <span className="text-gold-primary">prática</span>
           </motion.h2>
 
           <motion.div
