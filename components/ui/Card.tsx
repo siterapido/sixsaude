@@ -89,19 +89,17 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ].join(' ')
       ),
       'gold-glass': cn(
-        // Fundo escuro com glassmorphism e gradiente dourado sutil
-        'bg-gradient-to-br from-[#1A1A1A]/95 via-[#0F0F0F]/90 to-[#1A1A1A]/95',
-        'backdrop-blur-xl',
-        // Borda dourada com brilho
-        'border border-gold-primary/30',
-        // Sombra com glow dourado
-        'shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_60px_rgba(212,168,75,0.08),inset_0_1px_0_rgba(255,255,255,0.05)]',
-        // Hover com brilho dourado intensificado
+        // Gradiente sutil e clean
+        'bg-gradient-to-br from-[#FDF8E8] via-[#FBF4DC] to-[#F8EFD0]',
+        // Borda minimalista
+        'border border-[#E8DFC0]/60',
+        // Sombra suave
+        'shadow-sm',
+        // Hover sutil
         !noHover && [
-          'hover:border-gold-signature/50',
-          'hover:shadow-[0_16px_50px_rgba(0,0,0,0.5),0_0_80px_rgba(212,168,75,0.15),inset_0_1px_0_rgba(255,255,255,0.08)]',
-          'hover:scale-[1.02]',
-          'hover:-translate-y-1'
+          'hover:border-[#D4C9A8]/80',
+          'hover:shadow-md',
+          'hover:-translate-y-0.5'
         ].join(' ')
       ),
     }

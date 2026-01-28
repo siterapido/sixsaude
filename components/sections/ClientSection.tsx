@@ -70,29 +70,29 @@ export const ClientSection = () => {
                 viewport={{ once: true, margin: '-100px' }}
                 className={floatDelayClass}
               >
-                <TiltCard maxTilt={6} glareEnabled>
+                <TiltCard maxTilt={3} glareEnabled={false}>
                   <Card variant="gold-glass" className="group h-full">
-                    <CardContent className="p-6 md:p-8 relative z-10">
+                    <CardContent className="p-6 md:p-7 relative z-10">
                       {/* Icon */}
-                      <div className="mb-6">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-primary to-gold-signature flex items-center justify-center shadow-gold-sm">
-                          <Icon className="w-6 h-6 text-black-premium" />
+                      <div className="mb-5">
+                        <div className="w-10 h-10 rounded-lg bg-[#1A1A1A] flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-[#D4A84B]" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl mb-3 text-white group-hover:text-gold-primary transition-colors duration-300">
+                      <h3 className="font-display font-semibold text-lg mb-2 text-[#1A1A1A]">
                         {card.title}
                       </h3>
-                      <p className="text-platinum/80 text-sm mb-6 leading-relaxed">
+                      <p className="text-[#5A5A5A] text-sm mb-5 leading-relaxed">
                         {card.description}
                       </p>
 
                       {/* CTA */}
-                      <MagneticButton strength={0.2} className="w-full">
-                        <Button variant="primary" size="sm" className="w-full">
+                      <MagneticButton strength={0.15} className="w-full">
+                        <button className="w-full py-2.5 px-4 bg-[#1A1A1A] text-[#D4A84B] text-sm font-medium rounded-lg hover:bg-[#2A2A2A] transition-colors">
                           {card.cta}
-                        </Button>
+                        </button>
                       </MagneticButton>
                     </CardContent>
                   </Card>

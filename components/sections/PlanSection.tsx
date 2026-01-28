@@ -65,55 +65,53 @@ export const PlanSection = () => {
                 viewport={{ once: true, margin: '-100px' }}
                 className={floatDelayClass}
               >
-                <TiltCard maxTilt={5} glareEnabled>
+                <TiltCard maxTilt={3} glareEnabled={false}>
                   <Card variant="gold-glass" className="group h-full">
-                    <CardContent className="p-8 md:p-12 relative z-10">
+                    <CardContent className="p-8 md:p-10 relative z-10">
                       {/* Icon */}
-                      <div className="mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-primary to-gold-signature flex items-center justify-center shadow-gold-sm">
-                          <Icon className="w-7 h-7 text-black-premium" />
+                      <div className="mb-5">
+                        <div className="w-11 h-11 rounded-xl bg-[#1A1A1A] flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-[#D4A84B]" />
                         </div>
                       </div>
 
                       {/* Badge */}
                       {plan.badge && (
-                        <Badge variant="premium" className="mb-4">
+                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-[#1A1A1A] text-[#D4A84B] rounded-md">
                           {plan.badge}
-                        </Badge>
+                        </span>
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-2xl mb-2 text-white group-hover:text-gold-primary transition-colors duration-300">
+                      <h3 className="font-display font-semibold text-xl mb-2 text-[#1A1A1A]">
                         {plan.title}
                       </h3>
-                      <p className="text-platinum/80 text-base mb-8">
+                      <p className="text-[#5A5A5A] text-sm mb-6 leading-relaxed">
                         {plan.description}
                       </p>
 
                       {/* Benefits */}
-                      <ul className="space-y-3 mb-8">
+                      <ul className="space-y-2.5 mb-8">
                         {plan.benefits.map((benefit, idx) => (
                           <motion.li
                             key={idx}
-                            className="flex items-start gap-3"
+                            className="flex items-center gap-2.5"
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
                             viewport={{ once: true }}
                           >
-                            <div className="w-5 h-5 rounded-full bg-gold-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <Check className="w-3 h-3 text-black-premium" />
-                            </div>
-                            <span className="text-platinum/90">{benefit}</span>
+                            <Check className="w-4 h-4 text-[#B8A060] flex-shrink-0" />
+                            <span className="text-[#3A3A3A] text-sm">{benefit}</span>
                           </motion.li>
                         ))}
                       </ul>
 
                       {/* CTA */}
-                      <MagneticButton strength={0.3} className="w-full">
-                        <Button variant="primary" className="w-full shadow-gold-sm hover:shadow-gold-glow">
+                      <MagneticButton strength={0.2} className="w-full">
+                        <button className="w-full py-3 px-4 bg-[#1A1A1A] text-[#D4A84B] text-sm font-medium rounded-lg hover:bg-[#2A2A2A] transition-colors">
                           {index === 0 ? 'Quero Contratar' : 'Solicitar Cotação'}
-                        </Button>
+                        </button>
                       </MagneticButton>
                     </CardContent>
                   </Card>
