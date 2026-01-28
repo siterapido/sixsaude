@@ -70,23 +70,23 @@ export const PlanSection = () => {
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-14 h-14 rounded-xl bg-[#1A1A1A]/10 flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-[#1A1A1A]" />
+                        <div className="w-14 h-14 rounded-xl bg-black-premium flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-gold-primary" />
                         </div>
                       </div>
 
                       {/* Badge */}
                       {plan.badge && (
-                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-[#1A1A1A]/10 text-[#1A1A1A] rounded-md">
+                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-black-premium text-gold-primary rounded-xl">
                           {plan.badge}
                         </span>
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl text-[#1A1A1A] mb-2">
+                      <h3 className="font-display font-semibold text-xl text-black-premium mb-2">
                         {plan.title}
                       </h3>
-                      <p className="text-[#1A1A1A]/70 text-sm mb-6 leading-relaxed">
+                      <p className="text-gold-dark text-sm mb-6 leading-relaxed">
                         {plan.description}
                       </p>
 
@@ -101,15 +101,15 @@ export const PlanSection = () => {
                             transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
                             viewport={{ once: true }}
                           >
-                            <Check className="w-4 h-4 text-[#1A1A1A] flex-shrink-0" />
-                            <span className="text-[#1A1A1A]/70 text-sm">{benefit}</span>
+                            <Check className="w-4 h-4 text-gold-primary flex-shrink-0" />
+                            <span className="text-gold-dark text-sm">{benefit}</span>
                           </motion.li>
                         ))}
                       </ul>
 
                       {/* CTA */}
                       <MagneticButton strength={0.2} className="w-full">
-                        <button className="w-full py-3 px-4 bg-[#1A1A1A]/10 text-[#1A1A1A] text-sm font-medium rounded-lg hover:bg-[#1A1A1A]/20 transition-colors">
+                        <button className="w-full py-3 px-4 bg-black-premium/10 text-black-premium text-sm font-medium rounded-lg hover:bg-black-premium/20 transition-colors">
                           {index === 0 ? 'Quero Contratar' : 'Solicitar Cotação'}
                         </button>
                       </MagneticButton>

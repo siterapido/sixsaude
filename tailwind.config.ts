@@ -75,10 +75,10 @@ const config: Config = {
         'xxl': '128px',
       },
       borderRadius: {
-        'premium': '14px',
-        'card': '24px',        // Increased for softer look
-        'card-sm': '16px',
-        'section': '28px',
+        'premium': '16px',
+        'card': '20px',
+        'card-sm': '14px',
+        'section': '24px',
       },
       boxShadow: {
         // Premium shadows

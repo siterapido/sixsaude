@@ -75,22 +75,22 @@ export const ClientSection = () => {
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-14 h-14 rounded-xl bg-[#1A1A1A]/10 flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-[#1A1A1A]" />
+                        <div className="w-14 h-14 rounded-xl bg-black-premium flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-gold-primary" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl text-[#1A1A1A] mb-2">
+                      <h3 className="font-display font-semibold text-xl text-black-premium mb-2">
                         {card.title}
                       </h3>
-                      <p className="text-[#1A1A1A]/70 text-sm mb-5 leading-relaxed">
+                      <p className="text-gold-dark text-sm mb-5 leading-relaxed">
                         {card.description}
                       </p>
 
                       {/* CTA */}
                       <MagneticButton strength={0.15} className="w-full">
-                        <button className="w-full py-2.5 px-4 bg-[#1A1A1A]/10 text-[#1A1A1A] text-sm font-medium rounded-lg hover:bg-[#1A1A1A]/20 transition-colors">
+                        <button className="w-full py-2.5 px-4 bg-black-premium/10 text-black-premium text-sm font-medium rounded-lg hover:bg-black-premium/20 transition-colors">
                           {card.cta}
                         </button>
                       </MagneticButton>
