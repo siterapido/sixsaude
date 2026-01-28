@@ -56,7 +56,7 @@ export const ClientSection = () => {
   return (
     <section
       id="client-section"
-      className="relative py-24 md:py-32 lg:py-48 glass-section-dark glass-overlay noise-overlay gradient-mesh-dark ambient-glow"
+      className="relative py-24 md:py-32 lg:py-48 bg-black-premium"
     >
       <Container>
         {/* Custom Section Header with Larger Title */}
