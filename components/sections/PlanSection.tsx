@@ -67,26 +67,26 @@ export const PlanSection = () => {
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
                   <Card variant="gold-glass" className="group h-full">
-                    <CardContent className="p-8 md:p-10 relative z-10">
+                    <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-11 h-11 rounded-xl bg-[#1A1A1A] flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-[#D4A84B]" />
+                        <div className="w-14 h-14 rounded-xl bg-[#1A1A1A]/10 flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-[#1A1A1A]" />
                         </div>
                       </div>
 
                       {/* Badge */}
                       {plan.badge && (
-                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-[#1A1A1A] text-[#D4A84B] rounded-md">
+                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-[#1A1A1A]/10 text-[#1A1A1A] rounded-md">
                           {plan.badge}
                         </span>
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl mb-2 text-[#1A1A1A]">
+                      <h3 className="font-display font-semibold text-xl text-[#1A1A1A] mb-2">
                         {plan.title}
                       </h3>
-                      <p className="text-[#5A5A5A] text-sm mb-6 leading-relaxed">
+                      <p className="text-[#1A1A1A]/70 text-sm mb-6 leading-relaxed">
                         {plan.description}
                       </p>
 
@@ -101,15 +101,15 @@ export const PlanSection = () => {
                             transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
                             viewport={{ once: true }}
                           >
-                            <Check className="w-4 h-4 text-[#B8A060] flex-shrink-0" />
-                            <span className="text-[#3A3A3A] text-sm">{benefit}</span>
+                            <Check className="w-4 h-4 text-[#1A1A1A] flex-shrink-0" />
+                            <span className="text-[#1A1A1A]/70 text-sm">{benefit}</span>
                           </motion.li>
                         ))}
                       </ul>
 
                       {/* CTA */}
                       <MagneticButton strength={0.2} className="w-full">
-                        <button className="w-full py-3 px-4 bg-[#1A1A1A] text-[#D4A84B] text-sm font-medium rounded-lg hover:bg-[#2A2A2A] transition-colors">
+                        <button className="w-full py-3 px-4 bg-[#1A1A1A]/10 text-[#1A1A1A] text-sm font-medium rounded-lg hover:bg-[#1A1A1A]/20 transition-colors">
                           {index === 0 ? 'Quero Contratar' : 'Solicitar Cotação'}
                         </button>
                       </MagneticButton>

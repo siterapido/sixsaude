@@ -89,18 +89,16 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ].join(' ')
       ),
       'gold-glass': cn(
-        // Gradiente sutil e clean
+        // Fundo amarelo/dourado
         'bg-gradient-to-br from-[#FDF8E8] via-[#FBF4DC] to-[#F8EFD0]',
-        // Borda minimalista
+        // Borda sutil
         'border border-[#E8DFC0]/60',
-        // Sombra suave
-        'shadow-sm',
-        // Hover sutil
+        // Hover
         !noHover && [
           'hover:border-[#D4C9A8]/80',
-          'hover:shadow-md',
           'hover:-translate-y-0.5'
-        ].join(' ')
+        ].join(' '),
+        'transition-all duration-300'
       ),
     }
 
