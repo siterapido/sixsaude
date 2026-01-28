@@ -71,26 +71,30 @@ export const ClientSection = () => {
                 className={floatDelayClass}
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="gold-glass" className="group h-full">
+                  <Card variant="default" className="group h-full relative overflow-hidden border border-gold-primary/30 hover:border-gold-primary/50">
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/20 via-gold-signature/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black-premium/80 via-black-premium/40 to-transparent" />
+
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-14 h-14 rounded-xl bg-black-premium flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-gold-primary" />
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-primary to-gold-soft flex items-center justify-center shadow-gold-sm">
+                          <Icon className="w-7 h-7 text-black-premium" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl text-black-premium mb-2">
+                      <h3 className="font-display font-semibold text-xl text-gold-primary mb-2">
                         {card.title}
                       </h3>
-                      <p className="text-gold-dark text-sm mb-5 leading-relaxed">
+                      <p className="text-gold-light/80 text-sm mb-5 leading-relaxed">
                         {card.description}
                       </p>
 
                       {/* CTA */}
                       <MagneticButton strength={0.15} className="w-full">
-                        <button className="w-full py-2.5 px-4 bg-black-premium/10 text-black-premium text-sm font-medium rounded-lg hover:bg-black-premium/20 transition-colors">
+                        <button className="w-full py-2.5 px-4 bg-gold-primary/20 text-gold-primary text-sm font-medium rounded-lg border border-gold-primary/30 hover:bg-gold-primary/30 hover:border-gold-primary/50 transition-colors">
                           {card.cta}
                         </button>
                       </MagneticButton>

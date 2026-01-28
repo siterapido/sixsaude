@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react'
+import { Calendar, Clock, ArrowLeft } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { CategoryBadge } from '@/components/ui/CategoryBadge'
-import { Button } from '@/components/ui/Button'
+import { ShareButton } from '@/components/ui/ShareButton'
 import { NewsCard } from '@/components/ui/NewsCard'
 import { NewsSidebar } from '@/components/sections/NewsSidebar'
 import {
@@ -85,10 +85,12 @@ export default async function NewsArticlePage({ params }: PageProps) {
         {/* Back Button */}
         <Container className="relative h-full">
           <div className="absolute top-8">
-            <Link href="/noticias">
-              <Button variant="ghost" size="sm" icon={<ArrowLeft className="w-4 h-4" />}>
-                Voltar
-              </Button>
+            <Link
+              href="/noticias"
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide rounded-[10px] min-h-[40px] bg-white/5 border border-white/8 text-white backdrop-blur-xl hover:bg-white/10 hover:border-gold-primary/25 hover:text-gold-signature transition-all duration-300"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Voltar
             </Link>
           </div>
         </Container>
@@ -120,21 +122,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
                 <Clock className="w-4 h-4" />
                 {article.readingTime} min de leitura
               </span>
-              <button
-                className="flex items-center gap-2 hover:text-gold-signature transition-colors"
-                onClick={() => {
-                  if (typeof navigator !== 'undefined' && navigator.share) {
-                    navigator.share({
-                      title: article.title,
-                      text: article.excerpt,
-                      url: window.location.href,
-                    })
-                  }
-                }}
-              >
-                <Share2 className="w-4 h-4" />
-                Compartilhar
-              </button>
+              <ShareButton title={article.title} text={article.excerpt} />
             </div>
 
             {/* Author */}

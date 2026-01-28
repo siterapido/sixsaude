@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useCallback, FormEvent } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { TrendingUp, Tag, Mail, ChevronRight } from 'lucide-react'
@@ -28,6 +28,10 @@ export const NewsSidebar = ({
   loading = false,
   className,
 }: NewsSidebarProps) => {
+  const handleNewsletterSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }, [])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -133,7 +137,7 @@ export const NewsSidebar = ({
           <p className="text-platinum/80 text-sm mb-5">
             Receba as principais notícias de saúde direto no seu email.
           </p>
-          <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-3" onSubmit={handleNewsletterSubmit}>
             <input
               type="email"
               placeholder="Seu melhor email"

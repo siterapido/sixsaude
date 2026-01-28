@@ -66,24 +66,24 @@ export const PlanSection = () => {
                 className={floatDelayClass}
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="gold-glass" className="group h-full">
+                  <Card variant="glass" className="group h-full border border-gold-primary/20 hover:border-gold-primary/40">
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-14 h-14 rounded-xl bg-black-premium flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-gold-primary" />
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-primary to-gold-soft flex items-center justify-center shadow-gold-sm">
+                          <Icon className="w-7 h-7 text-black-premium" />
                         </div>
                       </div>
 
                       {/* Badge */}
                       {plan.badge && (
-                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-black-premium text-gold-primary rounded-xl">
+                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-gold-primary/20 text-gold-primary border border-gold-primary/30 rounded-xl">
                           {plan.badge}
                         </span>
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-semibold text-xl text-black-premium mb-2">
+                      <h3 className="font-display font-semibold text-xl text-gold-primary mb-2">
                         {plan.title}
                       </h3>
                       <p className="text-gold-dark text-sm mb-6 leading-relaxed">
