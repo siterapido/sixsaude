@@ -7,7 +7,7 @@ import { Container } from '@/components/ui/Container'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { TiltCard, MagneticButton, GradientText } from '@/components/animations'
+import { TiltCard, MagneticButton } from '@/components/animations'
 
 /**
  * Client Self-Service Section
@@ -62,34 +62,24 @@ export const ClientSection = () => {
         {/* Custom Section Header with Larger Title */}
         <div className="mb-16 md:mb-24 text-center space-y-6">
           <motion.p
-            className="text-gold-primary font-medium text-lg tracking-wide"
+            className="text-white/60 font-medium text-base tracking-wide uppercase"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Você já é nosso <GradientText className="font-semibold">cliente</GradientText>
+            Área do Cliente
           </motion.p>
 
           <motion.h2
-            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white max-w-4xl mx-auto leading-tight"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white max-w-3xl mx-auto leading-tight text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Resolva tudo por aqui de forma{' '}
-            <span className="text-gold-primary">rápida</span> e{' '}
-            <span className="text-gold-primary">prática</span>
+            Resolva tudo por aqui de forma rápida e prática
           </motion.h2>
-
-          <motion.div
-            className="h-1 bg-gradient-to-r from-gold-primary to-gold-signature rounded-full mx-auto"
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: 100, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          />
         </div>
 
         {/* Cards Grid */}
@@ -108,18 +98,14 @@ export const ClientSection = () => {
                 className={floatDelayClass}
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="default" className="group h-full relative overflow-hidden border border-gold-primary/40 hover:border-gold-primary/70 shadow-[0_0_30px_rgba(245,166,35,0.15)] hover:shadow-[0_0_50px_rgba(245,166,35,0.25)] transition-all duration-500">
-                    {/* Premium gold glow effect */}
-                    <div className="absolute -inset-px bg-gradient-to-br from-gold-primary/30 via-transparent to-gold-signature/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 via-gold-signature/5 to-transparent" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black-premium/90 via-black-premium/50 to-transparent" />
+                  <Card variant="default" className="group h-full relative overflow-hidden border border-white/10 hover:border-white/20 bg-black-deep/60 backdrop-blur-md transition-all duration-500 hover:bg-black-deep/80">
+                    {/* Fade/blur overlay effect */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black-premium/60 pointer-events-none" />
 
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Badge */}
                       <div className="absolute top-4 right-4">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gold-primary/20 text-gold-primary text-xs font-medium rounded-full border border-gold-primary/30">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-white/5 text-white/70 text-xs font-medium rounded-full border border-white/10">
                           <BadgeIcon className="w-3 h-3" />
                           {card.badge}
                         </span>
@@ -127,25 +113,25 @@ export const ClientSection = () => {
 
                       {/* Icon */}
                       <div className="mb-6">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-primary via-gold-signature to-gold-soft flex items-center justify-center shadow-[0_4px_20px_rgba(245,166,35,0.4)] group-hover:shadow-[0_4px_30px_rgba(245,166,35,0.6)] transition-shadow duration-500">
-                          <Icon className="w-8 h-8 text-black-premium" />
+                        <div className="w-14 h-14 rounded-xl bg-black-charcoal/80 border border-white/10 flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-gold-primary" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-display font-bold text-xl md:text-2xl text-gold-primary mb-2">
+                      <h3 className="font-display font-bold text-xl md:text-2xl text-white mb-2">
                         {card.title}
                       </h3>
-                      <p className="text-white/90 text-sm md:text-base mb-2 leading-relaxed">
+                      <p className="text-white/70 text-sm md:text-base mb-2 leading-relaxed">
                         {card.description}
                       </p>
-                      <p className="text-gold-light/60 text-xs mb-6">
+                      <p className="text-white/40 text-xs mb-6">
                         {card.detail}
                       </p>
 
                       {/* CTA */}
                       <MagneticButton strength={0.15} className="w-full">
-                        <button className="w-full py-3 px-4 bg-gradient-to-r from-gold-primary/30 to-gold-signature/20 text-gold-primary text-sm font-semibold rounded-xl border border-gold-primary/40 hover:border-gold-primary/70 hover:from-gold-primary/40 hover:to-gold-signature/30 transition-all duration-300 shadow-[0_2px_10px_rgba(245,166,35,0.2)] hover:shadow-[0_4px_20px_rgba(245,166,35,0.3)]">
+                        <button className="w-full py-3 px-4 bg-white/5 text-white text-sm font-medium rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                           {card.cta}
                         </button>
                       </MagneticButton>
