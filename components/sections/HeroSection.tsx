@@ -51,12 +51,31 @@ export const HeroSection = () => {
         <img
           src="/hero.png"
           alt="Família brasileira feliz"
-          className="w-full h-full object-cover object-[center_20%]"
+          className="w-full h-full object-cover object-[75%_20%] md:object-[70%_20%]"
         />
 
-        {/* Cinematic Overlay - Dark gradient from left */}
+        {/* Cinematic Overlay - Dark gradient from left (desktop) and center/bottom (mobile) */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 md:hidden"
+          style={{
+            background: `
+              linear-gradient(180deg,
+                rgba(10,10,10,0.5) 0%,
+                rgba(10,10,10,0.25) 30%,
+                rgba(10,10,10,0.15) 50%,
+                rgba(10,10,10,0.35) 70%,
+                rgba(10,10,10,0.75) 100%
+              ),
+              linear-gradient(90deg,
+                rgba(10,10,10,0.7) 0%,
+                rgba(10,10,10,0.4) 40%,
+                rgba(10,10,10,0.15) 100%
+              )
+            `,
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden md:block"
           style={{
             background: `
               linear-gradient(90deg,
@@ -154,10 +173,10 @@ export const HeroSection = () => {
           >
             <div className="flex -space-x-2">
               {[
-                { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face', alt: 'Cliente satisfeito' },
-                { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face', alt: 'Cliente satisfeita' },
-                { src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face', alt: 'Cliente satisfeito' },
-                { src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face', alt: 'Cliente satisfeita' },
+                { src: '/avatars/avatar-1.jpg', alt: 'Cliente satisfeita' },
+                { src: '/avatars/avatar-2.jpg', alt: 'Cliente satisfeita' },
+                { src: '/avatars/avatar-3.jpg', alt: 'Cliente satisfeito' },
+                { src: '/avatars/avatar-4.jpg', alt: 'Cliente satisfeita' },
               ].map((person, i) => (
                 <img
                   key={i}

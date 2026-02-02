@@ -23,7 +23,7 @@ export const ClientSection = () => {
       badge: 'Instantâneo',
       badgeIcon: Zap,
       cta: 'Acessar',
-      href: undefined,
+      href: 'https://www.digitalsaude.com.br/portal/dixmed',
     },
     {
       icon: BarChart3,
@@ -33,7 +33,7 @@ export const ClientSection = () => {
       badge: '24/7',
       badgeIcon: Clock,
       cta: 'Baixar',
-      href: undefined,
+      href: 'https://www.digitalsaude.com.br/portal/dixmed',
     },
     {
       icon: Smartphone,

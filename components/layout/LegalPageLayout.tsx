@@ -25,7 +25,7 @@ export const LegalPageLayout = ({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-black-premium pt-8 pb-16 md:pb-24">
+      <section className="relative bg-black-premium pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl" />
 
         <Container>
