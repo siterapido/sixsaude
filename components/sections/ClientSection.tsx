@@ -137,12 +137,12 @@ export const ClientSection = () => {
                             href={card.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300 text-center"
+                            className="block w-full py-3 px-4 bg-black !text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300 text-center"
                           >
                             {card.cta}
                           </a>
                         ) : (
-                          <button className="w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300">
+                          <button className="w-full py-3 px-4 bg-black !text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300">
                             {card.cta}
                           </button>
                         )}
