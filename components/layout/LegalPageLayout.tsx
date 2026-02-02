@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Footer } from '@/components/layout/Footer'
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { AIChatWidget } from '@/components/ui/AIChatWidget'
 
 interface LegalPageLayoutProps {
   title: string
@@ -88,7 +88,7 @@ export const LegalPageLayout = ({
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      <AIChatWidget />
     </>
   )
 }

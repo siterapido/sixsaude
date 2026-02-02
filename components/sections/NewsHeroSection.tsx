@@ -16,7 +16,7 @@ interface NewsHeroSectionProps {
  */
 export const NewsHeroSection = ({ article, loading = false }: NewsHeroSectionProps) => {
   return (
-    <section className="relative bg-black-premium py-8 md:py-12 overflow-hidden">
+    <section className="relative bg-black-premium pt-28 md:pt-32 pb-8 md:pb-12 overflow-hidden">
       {/* Gradient background accent */}
       <div className="absolute inset-0 bg-gradient-gold-radial opacity-50 pointer-events-none" />
 

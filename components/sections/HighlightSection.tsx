@@ -190,38 +190,38 @@ export const WhyChooseUsSection = () => {
   const items: HighlightItem[] = [
     {
       icon: Shield,
-      title: 'Proteção Completa',
-      description: 'Cobertura abrangente para todas as suas necessidades de saúde, do básico ao especializado.',
+      title: '100% Digital',
+      description: 'Processos ágeis e sem burocracia, tudo pelo celular ou computador.',
     },
     {
       icon: Clock,
-      title: 'Atendimento 24/7',
-      description: 'Suporte disponível a qualquer hora, todos os dias. Nunca fique sem assistência.',
+      title: 'Preços Competitivos',
+      description: 'Planos a partir de R$ 82,00 com o melhor custo-benefício do mercado.',
     },
     {
       icon: Heart,
-      title: 'Cuidado Humano',
-      description: 'Atendimento personalizado com profissionais que realmente se importam com você.',
+      title: 'Grandes Parceiros',
+      description: 'Planos com Nova Saúde, Ônix e Hapvida Notredame.',
     },
     {
       icon: Phone,
-      title: 'Fácil Acesso',
-      description: 'Autoatendimento pelo app e WhatsApp. Resolva tudo de forma rápida e simples.',
+      title: 'Alta Aprovação',
+      description: 'Nota 7.0/10 no Reclame Aqui e 80.5% de taxa de resolução.',
     },
     {
       icon: Stethoscope,
-      title: 'Rede Credenciada',
-      description: 'Acesso aos melhores hospitais, clínicas e laboratórios do país.',
+      title: 'Ampla Cobertura',
+      description: 'Acesso a uma rede credenciada de qualidade para sua saúde.',
     },
     {
       icon: Check,
-      title: 'Sem Burocracia',
-      description: 'Processos simplificados para você focar no que importa: sua saúde.',
+      title: 'Atendimento Ágil',
+      description: 'Suporte eficiente para resolver suas demandas rapidamente.',
     },
   ]
 
   const handleCTA = () => {
-    const phoneNumber = '5511999999999'
+    const phoneNumber = '5521972338589'
     const message = 'Olá! Quero conhecer os diferenciais da SIX Saúde!'
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
   }

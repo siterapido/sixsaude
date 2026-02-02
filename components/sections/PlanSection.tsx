@@ -18,23 +18,23 @@ export const PlanSection = () => {
   const plans = [
     {
       icon: User,
-      title: 'Plano Individual & Familiar',
-      description: 'Cobertura completa para você e quem você ama',
-      badge: 'Mais Contratado',
+      title: 'Plano Coletivo por Adesão',
+      description: 'Preços negociados coletivamente para associações, sindicatos e conselhos profissionais.',
+      badge: 'Melhor Custo-Benefício',
       benefits: [
-        'Rede credenciada ampla',
-        'Cobertura nacional',
-        'Sem carência para urgências',
+        'A partir de R$ 82,00*',
+        'Parceiros: Nova Saúde, Ônix, Hapvida',
+        'Inclusão de dependentes',
       ],
     },
     {
       icon: Building2,
-      title: 'Plano Empresarial',
-      description: 'Benefícios de qualidade para sua equipe',
+      title: 'Planos Empresariais',
+      description: 'Soluções completas para gestão de saúde da sua empresa.',
       benefits: [
-        'Gestão simplificada',
-        'Planos personalizados',
-        'Suporte dedicado para RH',
+        'Gestão 100% digital',
+        'Sem burocracia na contratação',
+        'Suporte especializado para RH',
       ],
     },
   ]
@@ -66,27 +66,27 @@ export const PlanSection = () => {
                 className={floatDelayClass}
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="glass" className="group h-full border border-gold-primary/20 hover:border-gold-primary/40">
+                  <Card variant="gold-glass" className="group h-full">
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Icon */}
                       <div className="mb-5">
-                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-primary to-gold-soft flex items-center justify-center shadow-gold-sm">
-                          <Icon className="w-7 h-7 text-black-premium" />
+                        <div className="w-14 h-14 rounded-xl bg-black/10 border border-black/10 flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-black" />
                         </div>
                       </div>
 
                       {/* Badge */}
                       {plan.badge && (
-                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-gold-primary/20 text-gold-primary border border-gold-primary/30 rounded-xl">
+                        <span className="inline-block mb-3 px-2.5 py-1 text-xs font-medium bg-black/10 text-black border border-black/20 rounded-xl">
                           {plan.badge}
                         </span>
                       )}
 
                       {/* Content */}
-                      <h3 className="font-display font-bold text-xl md:text-2xl text-gold-primary mb-2">
+                      <h3 className="font-display font-bold text-xl md:text-2xl text-black mb-2">
                         {plan.title}
                       </h3>
-                      <p className="text-gold-dark text-sm md:text-base mb-6 leading-relaxed">
+                      <p className="text-black/80 text-sm md:text-base mb-6 leading-relaxed">
                         {plan.description}
                       </p>
 
@@ -101,15 +101,15 @@ export const PlanSection = () => {
                             transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
                             viewport={{ once: true }}
                           >
-                            <Check className="w-4 h-4 text-gold-primary flex-shrink-0" />
-                            <span className="text-gold-dark text-sm">{benefit}</span>
+                            <Check className="w-4 h-4 text-black flex-shrink-0" />
+                            <span className="text-black/80 text-sm">{benefit}</span>
                           </motion.li>
                         ))}
                       </ul>
 
                       {/* CTA */}
                       <MagneticButton strength={0.2} className="w-full">
-                        <button className="w-full py-3 px-4 bg-black-premium/10 text-black-premium text-sm font-medium rounded-lg hover:bg-black-premium/20 transition-colors">
+                        <button className="w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-lg hover:bg-black/90 transition-colors">
                           {index === 0 ? 'Quero Contratar' : 'Solicitar Cotação'}
                         </button>
                       </MagneticButton>

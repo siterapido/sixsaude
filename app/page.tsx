@@ -7,8 +7,9 @@ import { SocialProofSection } from '@/components/sections/SocialProofSection'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { CTABanner } from '@/components/sections/CTABanner'
 import { WhyChooseUsSection } from '@/components/sections/HighlightSection'
+import { LatestNewsSection } from '@/components/sections/LatestNewsSection'
 import { Footer } from '@/components/layout/Footer'
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { AIChatWidget } from '@/components/ui/AIChatWidget'
 
 export const metadata: Metadata = {
   title: 'SIX Saúde | Planos de Saúde Premium com Atendimento Humano',
@@ -66,6 +67,9 @@ export default function Home() {
         ctaText="Quero Contratar"
       />
 
+      {/* Latest News & Content */}
+      <LatestNewsSection />
+
       {/* Social Proof Section */}
       <SocialProofSection />
 
@@ -75,8 +79,8 @@ export default function Home() {
       {/* Footer */}
       <Footer />
 
-      {/* WhatsApp Floating Button */}
-      <WhatsAppButton />
+      {/* AI Chat Widget */}
+      <AIChatWidget />
     </>
   )
 }

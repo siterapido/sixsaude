@@ -72,7 +72,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-black-premium">
       {/* Hero Image */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] pt-24 overflow-hidden">
         <Image
           src={article.coverImage}
           alt={article.title}
@@ -84,7 +84,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
         {/* Back Button */}
         <Container className="relative h-full">
-          <div className="absolute top-8">
+          <div className="absolute top-4">
             <Link
               href="/noticias"
               className="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide rounded-[10px] min-h-[40px] bg-white/5 border border-white/8 text-white backdrop-blur-xl hover:bg-white/10 hover:border-gold-primary/25 hover:text-gold-signature transition-all duration-300"

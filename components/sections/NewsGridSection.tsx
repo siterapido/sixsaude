@@ -73,7 +73,7 @@ export const NewsGridSection = ({
         <SearchInput
           value={searchQuery}
           onChange={onSearchChange}
-          className="max-w-md"
+          className="w-full"
         />
       </motion.div>
 

@@ -2,31 +2,41 @@
 
 ## Project Overview
 
-Landing page institucional premium para **SIX Saude Administradora de Beneficios**. Site focado em conversao com design minimalista preto/amarelo ouro.
+Landing page institucional premium e portal de conteúdo para **SIX Saude Administradora de Beneficios**. Site focado em conversão com design minimalista preto/amarelo ouro, integrando blog CMS e chatbot com IA.
 
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **UI**: React 19
 - **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS 4
+- **Styling**: Tailwind CSS 4 + Typography Plugin
 - **Animations**: Framer Motion
+- **Database**: Neon (PostgreSQL)
+- **ORM**: Drizzle ORM
+- **AI**: Vercel AI SDK (OpenAI)
+- **Auth**: Jose / Bcrypt (Custom Admin Auth)
 - **Icons**: Lucide React
 - **Package Manager**: pnpm
 
 ## Commands
 
 ```bash
-pnpm dev      # Start dev server (localhost:3000)
-pnpm build    # Production build
-pnpm start    # Start production server
-pnpm lint     # Run ESLint
+pnpm dev          # Start dev server (localhost:3000)
+pnpm build        # Production build
+pnpm start        # Start production server
+pnpm lint         # Run ESLint
+pnpm db:generate  # Generate Drizzle migrations
+pnpm db:push      # Push schema changes to Neon
+pnpm db:seed      # Seed database
 ```
 
 ## Project Structure
 
 ```
 app/
+  admin/              # CMS Dashboard (Protected)
+  api/                # API Routes (Chat, Admin, etc)
+  blog/               # Blog Portal (Public)
   layout.tsx          # Root layout + SEO metadata
   page.tsx            # Home page
   sitemap.ts          # Dynamic sitemap
@@ -36,12 +46,14 @@ app/
   lgpd/               # LGPD compliance
 
 components/
+  admin/              # Admin/CMS components
+  blog/               # Blog specific components
+  chat/               # AI Chat Widget components
   ui/                 # Reusable components
     Button.tsx        # primary | secondary | ghost
     Card.tsx          # default | glass | elevated
     Badge.tsx         # default | premium | success
     Container.tsx     # Responsive wrapper
-    WhatsAppButton.tsx # Floating CTA
   sections/           # Page sections
     HeroSection.tsx
     ClientSection.tsx
@@ -57,6 +69,7 @@ components/
     LegalPageLayout.tsx
 
 lib/
+  db/                 # Database schema & connection
   fonts.ts            # next/font (Inter + Montserrat)
   utils/cn.ts         # clsx utility
 ```
@@ -95,13 +108,18 @@ import { cn } from '@/lib/utils/cn'
 className={cn('base-class', condition && 'conditional-class')}
 ```
 
-### Imports
-Use `@/` alias for absolute imports from project root.
+### Database Access
+Use Drizzle queries in Server Actions or API routes:
+```tsx
+import { db } from '@/lib/db'
+import { posts } from '@/lib/db/schema'
+const allPosts = await db.select().from(posts)
+```
 
 ## Key Considerations
 
-- Mobile-first responsive design (320px to 4K)
-- All content in Portuguese (pt-BR)
-- WhatsApp as primary CTA channel
-- Performance target: 95+ PageSpeed
-- Deploy target: Vercel
+- **AI-First**: Integrates AI Chat Widget for support and AI-generated content for Blog.
+- **Mobile-first**: Responsive design (320px to 4K).
+- **Localization**: All content in Portuguese (pt-BR).
+- **Performance**: Target 95+ PageSpeed (optimized images, font loading).
+- **Deploy**: Vercel (Edge/Serverless functions).

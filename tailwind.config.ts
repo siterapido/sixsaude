@@ -49,7 +49,7 @@ const config: Config = {
         ...colors,
       },
       fontFamily: {
-        'display': ['var(--font-clash-display)', 'sans-serif'],
+        'display': ['var(--font-syne)', 'sans-serif'],
         'body': ['var(--font-inter)', 'sans-serif'],
       },
       fontSize: {
@@ -124,6 +124,25 @@ const config: Config = {
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
         'float': 'float 4s ease-in-out infinite',
         'neon-pulse': 'neonPulse 3s ease-in-out infinite',
+        // New animations migrated from globals.css
+        'card-float': 'cardFloat 6s ease-in-out infinite',
+        'card-breathe': 'cardBreathe 8s ease-in-out infinite',
+        'premium-float': 'premiumFloat 7s ease-in-out infinite',
+        'ambient-pulse': 'ambientPulse 10s ease-in-out infinite',
+        'ambient-breath': 'ambientBreath 12s ease-in-out infinite',
+        'mesh-float': 'meshFloat 25s ease-in-out infinite',
+        'flow-gradient': 'flowGradient 18s linear infinite',
+        'spotlight-move': 'spotlightMove 30s ease-in-out infinite',
+        'shine-diagonal': 'shineDiagonal 15s linear infinite',
+        'particle-float-1': 'particleFloat1 22s ease-in-out infinite',
+        'particle-float-2': 'particleFloat2 28s ease-in-out infinite',
+        'aurora-wave': 'auroraWave 10s ease-in-out infinite',
+        'vibrate-blur-1': 'vibrateBlur1 8s ease-in-out infinite',
+        'vibrate-blur-2': 'vibrateBlur2 10s ease-in-out infinite',
+        'vibrate-blur-3': 'vibrateBlur3 12s ease-in-out infinite',
+        'vibrate-blur-4': 'vibrateBlur4 9s ease-in-out infinite',
+        'shimmer-border': 'shimmerBorder 3s linear infinite',
+        'float-element': 'floatElement 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -146,6 +165,15 @@ const config: Config = {
           '0%': { backgroundPosition: '-1000px 0' },
           '100%': { backgroundPosition: '1000px 0' },
         },
+        floatElement: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '33%': { transform: 'translateY(-8px) rotate(2deg)' },
+          '66%': { transform: 'translateY(-4px) rotate(-1deg)' },
+        },
+        shimmerBorder: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
         glowPulse: {
           '0%, 100%': { boxShadow: '0 0 25px rgba(241, 193, 15, 0.22), 0 0 50px rgba(241, 193, 15, 0.1)' },
           '50%': { boxShadow: '0 0 35px rgba(241, 193, 15, 0.35), 0 0 70px rgba(241, 193, 15, 0.15)' },
@@ -163,6 +191,105 @@ const config: Config = {
             boxShadow: '0 0 25px rgba(241,193,15,0.35), 0 0 50px rgba(241,193,15,0.22), 0 0 80px rgba(241,193,15,0.12)',
             borderColor: 'rgba(241,193,15,0.8)',
           },
+        },
+        // Migrated Keyframes
+        cardFloat: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '25%': { transform: 'translateY(-6px) rotate(0.3deg)' },
+          '50%': { transform: 'translateY(-10px) rotate(0deg)' },
+          '75%': { transform: 'translateY(-4px) rotate(-0.3deg)' },
+        },
+        cardBreathe: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 12px 50px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08)',
+          },
+          '50%': {
+            transform: 'scale(1.008)',
+            boxShadow: '0 18px 60px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1)',
+          },
+        },
+        premiumFloat: {
+          '0%, 100%': {
+            transform: 'translateY(0) scale(1)',
+            boxShadow: '0 12px 50px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
+          },
+          '50%': {
+            transform: 'translateY(-8px) scale(1.005)',
+            boxShadow: '0 20px 70px rgba(0, 0, 0, 0.16), 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 30px rgba(241, 193, 15, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95)',
+          },
+        },
+        ambientPulse: {
+          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.1)' },
+        },
+        ambientBreath: {
+          '0%, 100%': { opacity: '0.5', transform: 'translate(-50%, -50%) scale(1)' },
+          '50%': { opacity: '1', transform: 'translate(-50%, -50%) scale(1.15)' },
+        },
+        meshFloat: {
+          '0%, 100%': {
+            background: 'radial-gradient(ellipse 80% 50% at 20% 20%, rgba(212, 168, 75, 0.035) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(232, 192, 104, 0.025) 0%, transparent 50%), radial-gradient(ellipse 50% 60% at 60% 30%, rgba(201, 164, 74, 0.02) 0%, transparent 50%)',
+          },
+          '33%': {
+            background: 'radial-gradient(ellipse 70% 60% at 30% 40%, rgba(212, 168, 75, 0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 70% 60%, rgba(232, 192, 104, 0.028) 0%, transparent 50%), radial-gradient(ellipse 60% 50% at 40% 80%, rgba(201, 164, 74, 0.018) 0%, transparent 50%)',
+          },
+          '66%': {
+            background: 'radial-gradient(ellipse 60% 70% at 70% 30%, rgba(212, 168, 75, 0.038) 0%, transparent 50%), radial-gradient(ellipse 70% 45% at 30% 70%, rgba(232, 192, 104, 0.025) 0%, transparent 50%), radial-gradient(ellipse 55% 55% at 80% 50%, rgba(201, 164, 74, 0.02) 0%, transparent 50%)',
+          },
+        },
+        flowGradient: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(33.33%)' },
+        },
+        spotlightMove: {
+          '0%': { top: '-20%', left: '-10%' },
+          '25%': { top: '10%', left: '70%' },
+          '50%': { top: '60%', left: '80%' },
+          '75%': { top: '70%', left: '20%' },
+          '100%': { top: '-20%', left: '-10%' },
+        },
+        shineDiagonal: {
+          '0%': { transform: 'translateX(-30%) translateY(-30%)' },
+          '100%': { transform: 'translateX(30%) translateY(30%)' },
+        },
+        particleFloat1: {
+          '0%, 100%': { top: '20%', left: '10%', opacity: '0', transform: 'scale(0.5)' },
+          '10%': { opacity: '0.15', transform: 'scale(1)' },
+          '50%': { top: '50%', left: '60%', opacity: '0.12' },
+          '90%': { opacity: '0.15', transform: 'scale(1)' },
+          '100%': { top: '80%', left: '90%', opacity: '0', transform: 'scale(0.5)' },
+        },
+        particleFloat2: {
+          '0%, 100%': { top: '70%', left: '80%', opacity: '0', transform: 'scale(0.5)' },
+          '10%': { opacity: '0.14', transform: 'scale(1.2)' },
+          '50%': { top: '40%', left: '30%', opacity: '0.1' },
+          '90%': { opacity: '0.14', transform: 'scale(1.2)' },
+          '100%': { top: '10%', left: '5%', opacity: '0', transform: 'scale(0.5)' },
+        },
+        auroraWave: {
+          '0%, 100%': { transform: 'scaleY(1)', opacity: '0.7' },
+          '50%': { transform: 'scaleY(1.2)', opacity: '1' },
+        },
+        vibrateBlur1: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)', opacity: '0.8' },
+          '25%': { transform: 'translate(-3%, 5%) scale(1.05)', opacity: '0.9' },
+          '50%': { transform: 'translate(-5%, 2%) scale(1.1)', opacity: '1' },
+          '75%': { transform: 'translate(-2%, -3%) scale(1.03)', opacity: '0.85' },
+        },
+        vibrateBlur2: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)', opacity: '0.7' },
+          '33%': { transform: 'translate(5%, -5%) scale(1.08)', opacity: '0.9' },
+          '66%': { transform: 'translate(3%, 3%) scale(1.05)', opacity: '0.8' },
+        },
+        vibrateBlur3: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1) rotate(0deg)', opacity: '0.6' },
+          '50%': { transform: 'translate(-8%, 5%) scale(1.15) rotate(5deg)', opacity: '0.85' },
+        },
+        vibrateBlur4: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)', opacity: '0.65' },
+          '40%': { transform: 'translate(4%, -6%) scale(1.1)', opacity: '0.8' },
+          '70%': { transform: 'translate(-3%, -2%) scale(1.05)', opacity: '0.75' },
         },
       },
       transitionTimingFunction: {
@@ -183,7 +310,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 
 export default config

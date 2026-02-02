@@ -23,6 +23,7 @@ export const ClientSection = () => {
       badge: 'Instantâneo',
       badgeIcon: Zap,
       cta: 'Acessar',
+      href: undefined,
     },
     {
       icon: BarChart3,
@@ -32,6 +33,7 @@ export const ClientSection = () => {
       badge: '24/7',
       badgeIcon: Clock,
       cta: 'Baixar',
+      href: undefined,
     },
     {
       icon: Smartphone,
@@ -41,6 +43,7 @@ export const ClientSection = () => {
       badge: 'Download',
       badgeIcon: Download,
       cta: 'Baixar',
+      href: 'https://play.google.com/store/search?q=dixmed&c=apps',
     },
     {
       icon: HelpCircle,
@@ -50,6 +53,7 @@ export const ClientSection = () => {
       badge: 'Suporte',
       badgeIcon: Shield,
       cta: 'Ver FAQ',
+      href: undefined,
     },
   ]
 
@@ -60,7 +64,7 @@ export const ClientSection = () => {
     >
       <Container>
         {/* Custom Section Header with Larger Title */}
-        <div className="mb-16 md:mb-24 text-center space-y-6">
+        <div className="mb-16 md:mb-24 space-y-6">
           <motion.p
             className="text-white/60 font-medium text-base tracking-wide uppercase"
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +76,7 @@ export const ClientSection = () => {
           </motion.p>
 
           <motion.h2
-            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white max-w-3xl mx-auto leading-tight text-center"
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white max-w-3xl leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -98,42 +102,50 @@ export const ClientSection = () => {
                 className={floatDelayClass}
               >
                 <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="default" className="group h-full relative overflow-hidden border border-white/10 hover:border-white/20 bg-black-deep/60 backdrop-blur-md transition-all duration-500 hover:bg-black-deep/80">
-                    {/* Fade/blur overlay effect */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black-premium/60 pointer-events-none" />
-
+                  <Card variant="gold-glass" className="group h-full relative overflow-hidden">
                     <CardContent className="p-6 md:p-8 relative z-10">
                       {/* Badge */}
                       <div className="absolute top-4 right-4">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-white/5 text-white/70 text-xs font-medium rounded-full border border-white/10">
-                          <BadgeIcon className="w-3 h-3" />
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-black/10 text-black text-xs font-medium rounded-full border border-black/20">
+                          <BadgeIcon className="w-3 h-3 text-black" />
                           {card.badge}
                         </span>
                       </div>
 
                       {/* Icon */}
                       <div className="mb-6">
-                        <div className="w-14 h-14 rounded-xl bg-black-charcoal/80 border border-white/10 flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-gold-primary" />
+                        <div className="w-14 h-14 rounded-xl bg-black/10 border border-black/10 flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-black" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-display font-bold text-xl md:text-2xl text-white mb-2">
+                      <h3 className="font-display font-bold text-xl md:text-2xl text-black mb-2">
                         {card.title}
                       </h3>
-                      <p className="text-white/70 text-sm md:text-base mb-2 leading-relaxed">
+                      <p className="text-black/80 text-sm md:text-base mb-2 leading-relaxed">
                         {card.description}
                       </p>
-                      <p className="text-white/40 text-xs mb-6">
+                      <p className="text-black/60 text-xs mb-6">
                         {card.detail}
                       </p>
 
                       {/* CTA */}
                       <MagneticButton strength={0.15} className="w-full">
-                        <button className="w-full py-3 px-4 bg-white/5 text-white text-sm font-medium rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                          {card.cta}
-                        </button>
+                        {card.href ? (
+                          <a
+                            href={card.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300 text-center"
+                          >
+                            {card.cta}
+                          </a>
+                        ) : (
+                          <button className="w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-xl border border-black hover:bg-black/90 transition-all duration-300">
+                            {card.cta}
+                          </button>
+                        )}
                       </MagneticButton>
                     </CardContent>
                   </Card>

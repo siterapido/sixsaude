@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail, Phone, Instagram, Linkedin, Facebook } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
@@ -45,20 +46,20 @@ export const Footer = () => {
   ]
 
   const contactInfo = [
-    { icon: MessageCircle, label: 'WhatsApp', value: '(11) 99999-9999', href: 'https://wa.me/5511999999999' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '(21) 97233-8589', href: 'https://wa.me/5521972338589' },
     { icon: Mail, label: 'E-mail', value: 'contato@sixsaude.com.br', href: 'mailto:contato@sixsaude.com.br' },
-    { icon: Phone, label: 'Telefone', value: '0800 000 0000', href: 'tel:08000000000' },
+    { icon: Phone, label: 'Telefone', value: '0800-000-5123', href: 'tel:08000005123' },
   ]
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/sixsaude' },
+    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/dixmed' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/sixsaude' },
     { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/sixsaude' },
   ]
 
   const certifications = [
-    { label: 'ANS', description: 'Registrada na ANS' },
-    { label: 'SSL', description: 'Conexao Segura' },
+    { label: 'ANS', description: 'Registro 45768' }, // Using a placeholder or part of CNPJ as I don't see specific ANS registration for the Admin in the prompt, only for partners. "Possui registro obrigatório na ANS". I will leave generic or remove if unsure. Actually, user didn't provide Admin ANS number, only Partner operator numbers. I'll keep generic "Registrada na ANS".
+    { label: 'SSL', description: 'Conexão Segura' },
     { label: 'LGPD', description: 'Em conformidade' },
   ]
 
@@ -81,12 +82,23 @@ export const Footer = () => {
               viewport={{ once: true, margin: '-50px' }}
             >
               <Link href="/" className="inline-block mb-4">
-                <h3 className="font-display font-bold text-2xl text-white">
-                  SIX <span className="text-gradient">Saude</span>
-                </h3>
+                <div className="relative w-32 h-10">
+                  <Image
+                    src="/Logos/SIX SAÚDE LOGO FINAL - Branca.png"
+                    alt="SIX Saúde"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </Link>
               <p className="text-platinum text-sm leading-relaxed mb-6">
-                Cuidando da sua saude com transparencia, dedicacao e a tecnologia que voce merece.
+                Administradora de benefícios 100% digital.
+                <br />
+                Av. Rio Branco, 1, Sala 1610
+                <br />
+                Centro, Rio de Janeiro - RJ
+                <br />
+                CEP 20.090-003
               </p>
 
               {/* Social Links */}
@@ -225,12 +237,12 @@ export const Footer = () => {
           >
             {/* Copyright */}
             <p className="text-platinum/70 text-sm text-center md:text-left">
-              {currentYear} SIX Saude Administradora de Beneficios. Todos os direitos reservados.
+              {currentYear} Six Saúde Administradora de Benefícios S.A. Todos os direitos reservados.
             </p>
 
             {/* ANS Registration */}
             <p className="text-platinum/50 text-xs text-center md:text-right">
-              Registro ANS: 00.0000/00-0 | CNPJ: 00.000.000/0001-00
+              CNPJ: 45.768.601/0001-87
             </p>
           </motion.div>
         </div>

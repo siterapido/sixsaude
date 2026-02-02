@@ -17,34 +17,34 @@ export const FAQSection = () => {
 
   const faqs = [
     {
-      question: 'Como faço para contratar um plano?',
+      question: 'Quando recebo minha carteirinha digital?',
       answer:
-        'É muito simples! Clique no botão "Quero Contratar" e fale diretamente com um de nossos consultores pelo WhatsApp. Vamos te ajudar a escolher o melhor plano para você ou sua empresa.',
+        'Você terá acesso à sua carteirinha digital a partir da data de início da vigência do contrato, diretamente pelo Aplicativo Six Saúde.',
     },
     {
-      question: 'Como acessar a 2ª via do boleto?',
+      question: 'Como realizo o pagamento das mensalidades?',
       answer:
-        'Você pode acessar diretamente aqui no site, na seção "Sou Cliente", ou pelo nosso aplicativo disponível na App Store e Google Play. É rápido e seguro!',
+        'O pagamento é feito via boleto digital, enviado mensalmente por e-mail e SMS. Você também pode acessar pelo nosso site ou WhatsApp. O boleto é registrado e permite pagamento após o vencimento com atualização automática.',
     },
     {
-      question: 'Como funciona o reembolso?',
+      question: 'Quando posso começar a usar o plano?',
       answer:
-        'O reembolso varia de acordo com o plano contratado. Entre em contato com nosso suporte para entender as regras do seu plano específico.',
+        'O uso do plano é liberado a partir da data de início da vigência expressa no seu contrato.',
     },
     {
-      question: 'Posso incluir dependentes no meu plano?',
+      question: 'Como funcionam as carências?',
       answer:
-        'Sim! Nossos planos permitem a inclusão de dependentes (cônjuge, filhos, pais). Fale com nosso time para entender as condições e valores.',
+        'A carência é o tempo de espera para realizar certos procedimentos. Seguimos os prazos máximos da ANS, mas eles podem ser reduzidos promocionalmente. Consulte sua proposta para detalhes específicos.',
     },
     {
-      question: 'Qual o prazo de carência?',
+      question: 'O que é Cobertura Parcial Temporária (CPT)?',
       answer:
-        'Os prazos de carência variam conforme o plano e o tipo de atendimento. Em casos de urgência e emergência, não há carência. Consulte nosso time para detalhes do seu plano.',
+        'É um período de restrição para procedimentos de alta complexidade e cirurgias relacionados a doenças pré-existentes. Consultas e atendimentos de urgência/emergência não são afetados.',
     },
     {
       question: 'Como entrar em contato com o suporte?',
       answer:
-        'Você pode falar conosco pelo WhatsApp, telefone ou e-mail. Estamos sempre prontos para ajudar! Use o botão de contato ou o ícone do WhatsApp no site.',
+        'Estamos disponíveis pelo telefone 0800-000-5123 e WhatsApp (21) 97233-8589, de segunda a sexta, das 9h às 18h.',
     },
   ]
 
@@ -106,44 +106,39 @@ export const FAQSection = () => {
             >
               <motion.button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`w-full bg-black-deep/80 backdrop-blur-sm rounded-2xl p-6 text-left transition-all duration-500 ${
-                  openIndex === index
+                className={`w-full bg-black-deep/80 backdrop-blur-sm rounded-2xl p-6 text-left transition-all duration-500 ${openIndex === index
                     ? 'border-2 border-gold-primary/60 shadow-[0_0_30px_rgba(245,166,35,0.2)]'
                     : 'border border-gold-primary/20 hover:border-gold-primary/40 shadow-[0_0_20px_rgba(245,166,35,0.05)] hover:shadow-[0_0_25px_rgba(245,166,35,0.1)]'
-                }`}
+                  }`}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.995 }}
               >
                 <div className="flex items-center gap-4">
                   {/* Number indicator */}
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm transition-all duration-300 ${
-                    openIndex === index
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm transition-all duration-300 ${openIndex === index
                       ? 'bg-gradient-to-br from-gold-primary to-gold-signature text-black-premium shadow-[0_4px_15px_rgba(245,166,35,0.4)]'
                       : 'bg-gold-primary/10 text-gold-primary border border-gold-primary/30'
-                  }`}>
+                    }`}>
                     {String(index + 1).padStart(2, '0')}
                   </div>
 
-                  <h3 className={`flex-1 font-semibold text-lg md:text-xl pr-4 transition-colors duration-300 ${
-                    openIndex === index ? 'text-gold-primary' : 'text-white group-hover:text-gold-light'
-                  }`}>
+                  <h3 className={`flex-1 font-semibold text-lg md:text-xl pr-4 transition-colors duration-300 ${openIndex === index ? 'text-gold-primary' : 'text-white group-hover:text-gold-light'
+                    }`}>
                     {faq.question}
                   </h3>
 
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                      openIndex === index
+                    className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${openIndex === index
                         ? 'bg-gold-primary/20 border border-gold-primary/40'
                         : 'bg-gold-primary/5 border border-gold-primary/20'
-                    }`}
+                      }`}
                   >
                     <ChevronDown
                       size={20}
-                      className={`text-gold-primary transition-all duration-300 ${
-                        openIndex === index ? 'drop-shadow-[0_0_8px_rgba(245,166,35,0.6)]' : ''
-                      }`}
+                      className={`text-gold-primary transition-all duration-300 ${openIndex === index ? 'drop-shadow-[0_0_8px_rgba(245,166,35,0.6)]' : ''
+                        }`}
                     />
                   </motion.div>
                 </div>

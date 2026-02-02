@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { fontVariables, inter, montserrat } from '@/lib/fonts'
+import { fontVariables, inter, syne } from '@/lib/fonts'
 import { Navbar } from '@/components/layout/Navbar'
 import { CursorGlow } from '@/components/effects/CursorGlow'
 import '@/styles/globals.css'
@@ -166,7 +166,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} ${montserrat.className} antialiased bg-black-premium text-white`}
+        className={`${inter.className} ${syne.className} antialiased bg-black-premium text-white`}
       >
         {/* Skip to main content for accessibility */}
         <a href="#main" className="sr-only focus:not-sr-only">

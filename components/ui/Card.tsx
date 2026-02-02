@@ -89,11 +89,16 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ].join(' ')
       ),
       'gold-glass': cn(
-        // Fundo amarelo da paleta
-        'bg-gradient-gold-soft',
+        // Fundo amarelo da paleta (forçado com hex)
+        'bg-gold-primary',
+        // Texto preto forçado
+        'text-black',
+        // Borda sutil
+        'border border-black/20',
         // Hover
         !noHover && [
-          'hover:-translate-y-0.5'
+          'hover:-translate-y-0.5',
+          'hover:shadow-gold-md'
         ].join(' '),
         'transition-all duration-300'
       ),

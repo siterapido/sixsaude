@@ -1,4 +1,4 @@
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Syne } from 'next/font/google'
 
 /**
  * Inter - Body font (highly legible, professional)
@@ -13,14 +13,13 @@ export const inter = Inter({
 })
 
 /**
- * Montserrat - Display font (modern, bold, premium)
- * Weights: 600 (Semibold), 700 (Bold), 800 (ExtraBold)
- * Alternative to Clash Display
+ * Syne - Display font (unique, art-house, premium)
+ * Weights: 400, 500, 600, 700, 800
  */
-export const montserrat = Montserrat({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['600', '700', '800'],
-  variable: '--font-clash-display',
+export const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-syne',
   display: 'swap',
   fallback: ['system-ui', 'sans-serif'],
 })
@@ -28,4 +27,4 @@ export const montserrat = Montserrat({
 /**
  * Font combinations for layout
  */
-export const fontVariables = [inter.variable, montserrat.variable].join(' ')
+export const fontVariables = [inter.variable, syne.variable].join(' ')
