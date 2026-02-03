@@ -46,9 +46,9 @@ export const Footer = () => {
   ]
 
   const contactInfo = [
-    { icon: MessageCircle, label: 'WhatsApp', value: '(21) 97233-8589', href: 'https://wa.me/5521972338589' },
-    { icon: Mail, label: 'E-mail', value: 'contato@sixsaude.com.br', href: 'mailto:contato@sixsaude.com.br' },
-    { icon: Phone, label: 'Telefone', value: '0800-000-5123', href: 'tel:08000005123' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '(21) 97222-9609', href: 'https://wa.me/5521972229609' },
+    { icon: Mail, label: 'E-mail', value: 'atendimento@sixsaude.com.br', href: 'mailto:atendimento@sixsaude.com.br' },
+    { icon: Phone, label: 'Telefone', value: '(21) 97222-9609', href: 'tel:+5521972229609' },
   ]
 
   const socialLinks = [

@@ -143,7 +143,7 @@ export const HeroSection = () => {
                 size="lg"
                 className="!bg-gold-primary !text-black-premium hover:!bg-gold-signature !px-8 !py-6 !text-base font-bold min-w-[200px] rounded-xl shadow-gold-md transition-all duration-300 hover:shadow-gold-lg"
                 onClick={() => {
-                  const phoneNumber = '5521972338589'
+                  const phoneNumber = '5521972229609'
                   const message = 'Olá! Tenho interesse em conhecer os planos da SIX Saúde. Podem me ajudar?'
                   window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
                 }}

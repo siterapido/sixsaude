@@ -138,7 +138,7 @@ export const CTABanner: React.FC<CTABannerProps> = ({
                   : 'shadow-gold-glow'
               )}
               onClick={() => {
-                const phoneNumber = '5511999999999'
+                const phoneNumber = '5521972229609'
                 let message = ''
 
                 if (variant === 'help') {

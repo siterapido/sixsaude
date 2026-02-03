@@ -24,7 +24,7 @@ interface WhatsAppButtonProps {
  * <WhatsAppButton phoneNumber="5511999999999" message="Olá!" />
  */
 export const WhatsAppButton = ({
-  phoneNumber = '5511999999999',
+  phoneNumber = '5521972229609',
   message = 'Olá! Vim pelo site da SIX Saúde e gostaria de mais informações.',
 }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {

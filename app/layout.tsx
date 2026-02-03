@@ -131,8 +131,8 @@ export default function RootLayout({
               url: 'https://sixsaude.com.br',
               logo: 'https://sixsaude.com.br/logo.png',
               image: 'https://sixsaude.com.br/og-image.jpg',
-              telephone: '+55-11-99999-9999',
-              email: 'contato@sixsaude.com.br',
+              telephone: '+55-21-97222-9609',
+              email: 'atendimento@sixsaude.com.br',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'São Paulo',

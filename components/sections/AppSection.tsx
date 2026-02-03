@@ -173,11 +173,11 @@ export const AppSection = () => {
               <Button
                 variant="primary"
                 size="lg"
-                icon={<Download size={20} />}
-                className="glow-pulse"
-                onClick={() => window.open('https://play.google.com/store/search?q=dixmed&c=apps', '_blank')}
+                icon={<Clock size={20} />}
+                className="opacity-70 cursor-not-allowed"
+                disabled
               >
-                Google Play
+                Em breve
               </Button>
             </motion.div>
           </motion.div>
