@@ -63,11 +63,11 @@ export const PlanSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true, margin: '-100px' }}
-                className={floatDelayClass}
+                className={`${floatDelayClass} h-full`}
               >
-                <TiltCard maxTilt={3} glareEnabled={false}>
+                <TiltCard maxTilt={3} glareEnabled={false} className="h-full">
                   <Card variant="gold-glass" className="group h-full">
-                    <CardContent className="p-6 md:p-8 relative z-10">
+                    <CardContent className="p-6 md:p-8 relative z-10 flex flex-col h-full">
                       {/* Icon */}
                       <div className="mb-5">
                         <div className="w-14 h-14 rounded-xl bg-black/10 border border-black/10 flex items-center justify-center">
@@ -91,7 +91,7 @@ export const PlanSection = () => {
                       </p>
 
                       {/* Benefits */}
-                      <ul className="space-y-2.5 mb-8">
+                      <ul className="space-y-2.5 mb-8 flex-grow">
                         {plan.benefits.map((benefit, idx) => (
                           <motion.li
                             key={idx}
@@ -108,7 +108,7 @@ export const PlanSection = () => {
                       </ul>
 
                       {/* CTA */}
-                      <MagneticButton strength={0.2} className="w-full">
+                      <MagneticButton strength={0.2} className="w-full mt-auto">
                         <button className="w-full py-3 px-4 bg-black text-white text-sm font-medium rounded-lg hover:bg-black/90 transition-colors">
                           {index === 0 ? 'Quero Contratar' : 'Solicitar Cotação'}
                         </button>
