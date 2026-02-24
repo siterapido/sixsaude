@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FileText, BarChart3, Smartphone, HelpCircle, Zap, Clock, Shield, Download } from 'lucide-react'
+import { FileText, BarChart3, HelpCircle, Zap, Clock, Shield } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
@@ -34,16 +34,6 @@ export const ClientSection = () => {
       badgeIcon: Clock,
       cta: 'Baixar',
       href: 'https://www.digitalsaude.com.br/portal/dixmed',
-    },
-    {
-      icon: Smartphone,
-      title: 'Nosso App',
-      description: 'Tudo na palma da sua mão',
-      detail: 'iOS e Android em breve',
-      badge: 'Em breve',
-      badgeIcon: Clock,
-      cta: 'Em breve',
-      href: undefined,
     },
     {
       icon: HelpCircle,
@@ -87,11 +77,11 @@ export const ClientSection = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {cards.map((card, index) => {
             const Icon = card.icon
             const BadgeIcon = card.badgeIcon
-            const floatDelayClass = ['card-premium-float', 'card-premium-float-delay-1', 'card-premium-float-delay-2', 'card-premium-float-delay-3'][index % 4]
+            const floatDelayClass = ['card-premium-float', 'card-premium-float-delay-1', 'card-premium-float-delay-2'][index % 3]
             return (
               <motion.div
                 key={index}
@@ -101,9 +91,9 @@ export const ClientSection = () => {
                 viewport={{ once: true, margin: '-100px' }}
                 className={floatDelayClass}
               >
-                <TiltCard maxTilt={3} glareEnabled={false}>
-                  <Card variant="gold-glass" className="group h-full relative overflow-hidden">
-                    <CardContent className="p-6 md:p-8 relative z-10">
+                <TiltCard maxTilt={3} glareEnabled={false} className="h-full">
+                  <Card variant="gold-glass" className="group h-full relative overflow-hidden flex flex-col">
+                    <CardContent className="p-6 md:p-8 relative z-10 flex flex-col flex-1">
                       {/* Badge */}
                       <div className="absolute top-4 right-4">
                         <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-black/10 text-black text-xs font-medium rounded-full border border-black/20">
@@ -131,7 +121,7 @@ export const ClientSection = () => {
                       </p>
 
                       {/* CTA */}
-                      <MagneticButton strength={0.15} className="w-full">
+                      <MagneticButton strength={0.15} className="w-full mt-auto">
                         {card.href ? (
                           <a
                             href={card.href}

@@ -16,11 +16,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Cliente', href: '/#client-section' },
-  { label: 'Quero Contratar', href: '/#plans', highlight: true },
-  { label: 'Canal de Atendimento', href: '/#faq' },
+  { label: 'Nossos Planos', href: '/#plans', highlight: true },
   { label: 'Sobre Nós', href: '/sobre' },
   { label: 'Blog', href: '/noticias' },
+  { label: 'Canais de Atendimento', href: '/#faq' },
 ]
 
 /**
@@ -158,7 +157,7 @@ export const Navbar = () => {
                 className="mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Quero Contratar
+                Nossos Planos
               </Button>
             </motion.nav>
             <button

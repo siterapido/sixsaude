@@ -123,7 +123,7 @@ export const HeroSection = () => {
                 Sua saúde
               </span>
               <span className="block text-[clamp(2.5rem,7vw,5.5rem)] text-gold-primary">
-                em boas mãos
+                em nossos planos
               </span>
             </h1>
           </motion.div>
@@ -131,37 +131,37 @@ export const HeroSection = () => {
           {/* Subheadline */}
           <motion.div variants={itemVariants} className="mb-10 lg:mb-12 max-w-[520px]">
             <p className="text-lg md:text-xl text-platinum-light leading-relaxed">
-              Planos de saúde com transparência, agilidade e um time sempre pronto para cuidar de você e sua família.
+              Planos de saúde para você, sua família e sua empresa, com um time sempre pronto para lhe atender com agilidade, transparência e segurança.
             </p>
           </motion.div>
 
           {/* CTAs */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-            <MagneticButton strength={0.15}>
+            <MagneticButton strength={0.1}>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="!bg-white/5 !border !border-white/20 !text-white hover:!bg-white/10 hover:!border-white/30 !px-8 !py-6 !text-base font-medium min-w-[200px] rounded-xl transition-all duration-300"
+                onClick={() => {
+                  document.getElementById('client-section')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Já Sou Cliente
+              </Button>
+            </MagneticButton>
+
+            <MagneticButton strength={0.1}>
               <Button
                 variant="primary"
                 size="lg"
                 className="!bg-gold-primary !text-black-premium hover:!bg-gold-signature !px-8 !py-6 !text-base font-bold min-w-[200px] rounded-xl shadow-gold-md transition-all duration-300 hover:shadow-gold-lg"
                 onClick={() => {
                   const phoneNumber = '5521972229609'
-                  const message = 'Olá! Tenho interesse em conhecer os planos da SIX Saúde. Podem me ajudar?'
+                  const message = 'Olá! Gostaria de fazer um orçamento de plano de saúde com a SIX Saúde.'
                   window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
                 }}
               >
-                Quero Contratar
-              </Button>
-            </MagneticButton>
-
-            <MagneticButton strength={0.1}>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="!bg-white/5 !border !border-white/20 !text-white hover:!bg-white/10 hover:!border-white/30 !px-8 !py-6 !text-base font-medium min-w-[180px] rounded-xl transition-all duration-300"
-                onClick={() => {
-                  document.getElementById('client-section')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Já Sou Cliente
+                Fazer Orçamento
               </Button>
             </MagneticButton>
           </motion.div>
